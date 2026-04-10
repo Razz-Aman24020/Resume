@@ -1,0 +1,23 @@
+body{
+    background-color:#121212;
+}
+h1{
+color: cyan;
+font-size: 45px;
+}
+mark{
+    background-color: #001524;
+    color:cyan;}
+p{
+    color: #39ff14;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.profile-pic:hover
+{
+    transition: transform 2s ease;
+    transform-style: preserve-3d;
+}
+.profile-pic:hover{
+   transform: perspective(1000px) rotateY(360deg);
+}
