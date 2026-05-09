@@ -1,23 +1,102 @@
-body{
+body {
     background-color:#121212;
 }
-h1{
-color: cyan;
-font-size: 45px;
+
+h1 {
+    color: cyan;
+    font-size: 45px;
 }
-mark{
+
+mark {
     background-color: #001524;
-    color:cyan;}
-p{
+    color:cyan;
+}
+
+p {
     color: #39ff14;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.profile-pic:hover
-{
+
+.profile-pic {
     transition: transform 2s ease;
     transform-style: preserve-3d;
 }
-.profile-pic:hover{
+
+.profile-pic:hover {
    transform: perspective(1000px) rotateY(360deg);
+}
+
+
+
+.orbit-container {
+    position: relative;
+    width: 600px; 
+    height: 600px; 
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bigger Center Picture */
+.center-model {
+    width: 220px; 
+    height: 220px; 
+    border-radius: 50%;
+    object-fit: cover; 
+    position: absolute;
+    z-index: 10;
+    border: 4px solid cyan;
+    box-shadow: 0 0 30px cyan, inset 0 0 20px rgba(0, 0, 0, 0.8);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Bigger Icons and Text container */
+.icon-wrapper {
+    position: absolute;
+    font-size: 55px; 
+    color: #39ff14;  
+    filter: drop-shadow(0 0 10px #39ff14); 
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+    animation: orbit 15s linear infinite;
+    animation-delay: var(--delay);
+}
+
+.icon-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    color: cyan;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #000;
+}
+
+
+
+@keyframes orbit {
+    0% {
+       
+        transform: rotate(0deg) translateX(240px) rotate(0deg);
+    }
+    100% {
+    
+        transform: rotate(360deg) translateX(240px) rotate(-360deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
